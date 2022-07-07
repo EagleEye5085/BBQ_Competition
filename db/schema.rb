@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2022_07_07_155022) do
     t.string "name"
     t.integer "members"
     t.integer "wins"
+    t.boolean "last_year_winner"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

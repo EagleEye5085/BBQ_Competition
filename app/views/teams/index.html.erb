@@ -1,1 +1,7 @@
 <h1>Teams</h1>
+<% @teams.each do |team| %>
+  <h3>Team name: <%= team.name %></h3>
+  <p>Number of members: <%= team.members %></p>
+  <p>Team wins: <%= team.wins %></p>
+  <p>Team last year winner: <%= team.last_year_winner %></p>
+<% end %>
