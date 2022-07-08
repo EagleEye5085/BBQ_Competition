@@ -246,6 +246,7 @@
           1,
           1,
           1,
+          1,
           null
         ]
       },
@@ -269,14 +270,7 @@
           null
         ]
       },
-      "/Users/eagleeye/turing/2module/projects/bbq_Competition/app/models/submission.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/eagleeye/turing/2module/projects/bbq_Competition/app/controllers/submissions_controller.rb": {
+      "/Users/eagleeye/turing/2module/projects/bbq_Competition/app/controllers/teams_controller.rb": {
         "lines": [
           1,
           null,
@@ -285,7 +279,7 @@
           null,
           null,
           1,
-          2,
+          1,
           null,
           null,
           null
@@ -298,6 +292,6 @@
         ]
       }
     },
-    "timestamp": 1657238223
+    "timestamp": 1657320458
   }
 }

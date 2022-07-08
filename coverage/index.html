@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-07-07T18:57:03-05:00">2022-07-07T18:57:03-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-07-08T17:47:38-05:00">2022-07-08T17:47:38-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  98.28%
+  98.25%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
-       <span class="green">
-         1.02
+       <span class="yellow">
+         1.0
        </span>
     </span> hits/line
     )
@@ -39,15 +39,15 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>20</b> files in total.
+    <b>19</b> files in total.
   </div>
 
   <div class="t-line-summary">
-    <b>58</b> relevant lines,
-    <span class="green"><b>57</b> lines covered</span> and
+    <b>57</b> relevant lines,
+    <span class="green"><b>56</b> lines covered</span> and
     <span class="red"><b>1</b> lines missed. </span>
     (<span class="green">
-  98.28%
+  98.25%
 </span>
 )
   </div>
@@ -82,13 +82,13 @@
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#769b653617014c7f88a81d498983a8cd26dffc79" class="src_link" title="app/controllers/submissions_controller.rb">app/controllers/submissions_controller.rb</a></td>
+            <td class="strong t-file__name"><a href="#9d7455e8d548d00201a0e885388d1e2084af6583" class="src_link" title="app/controllers/teams_controller.rb">app/controllers/teams_controller.rb</a></td>
             <td class="red strong cell--number t-file__coverage">80.00 %</td>
             <td class="cell--number">11</td>
             <td class="cell--number">5</td>
             <td class="cell--number">4</td>
             <td class="cell--number">1</td>
-            <td class="cell--number">1.00</td>
+            <td class="cell--number">0.80</td>
             
           </tr>
         
@@ -105,17 +105,6 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#de8389bf16845208ff1355e762d291ae7ea11b94" class="src_link" title="app/models/application_record.rb">app/models/application_record.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">3</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#6296b16a7166dec2e175f84e156c69a337f305c6" class="src_link" title="app/models/submission.rb">app/models/submission.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">3</td>
             <td class="cell--number">2</td>
@@ -282,9 +271,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#4a665ff69d9838f00cfcfe5134f82f54df6ff37d" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">7</td>
-            <td class="cell--number">5</td>
-            <td class="cell--number">5</td>
+            <td class="cell--number">8</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">6</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -360,9 +349,9 @@
 </div>
 
       
-        <div class="source_table" id="769b653617014c7f88a81d498983a8cd26dffc79">
+        <div class="source_table" id="9d7455e8d548d00201a0e885388d1e2084af6583">
   <div class="header">
-    <h3>app/controllers/submissions_controller.rb</h3>
+    <h3>app/controllers/teams_controller.rb</h3>
     <h4>
       <span class="red">
   80.0%
@@ -393,7 +382,7 @@
 
             
 
-            <code class="ruby">class SubmissionsController &lt; ApplicationController</code>
+            <code class="ruby">class TeamsController &lt; ApplicationController</code>
           </li>
         </div>
       
@@ -426,7 +415,7 @@
 
             
 
-            <code class="ruby">    @submissions = Submission.all</code>
+            <code class="ruby">    @teams = Team.all</code>
           </li>
         </div>
       
@@ -464,13 +453,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="8">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="1" data-linenumber="8">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    @submission = Submission.find(params[:id])</code>
+            <code class="ruby">    @team = Team.find(params[:id])</code>
           </li>
         </div>
       
@@ -610,70 +599,6 @@
             
 
             <code class="ruby">  self.abstract_class = true</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="3">
-            
-            
-
-            
-
-            <code class="ruby">end</code>
-          </li>
-        </div>
-      
-    </ol>
-  </pre>
-</div>
-
-      
-        <div class="source_table" id="6296b16a7166dec2e175f84e156c69a337f305c6">
-  <div class="header">
-    <h3>app/models/submission.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
-
-      lines covered
-    </h4>
-
-    
-
-    <div class="t-line-summary">
-      <b>2</b> relevant lines.
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
-    <ol>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="1">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">class Submission &lt; ApplicationRecord</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="2">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  belongs_to :team</code>
           </li>
         </div>
       
@@ -3209,8 +3134,8 @@
     
 
     <div class="t-line-summary">
-      <b>5</b> relevant lines.
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>6</b> relevant lines.
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -3288,7 +3213,18 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="7">
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  get &#39;/teams/:team_id/submissions&#39;, to: &#39;team_submissions#index&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
             
             
 

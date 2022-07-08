@@ -4,4 +4,8 @@ class TeamsController < ApplicationController
     @teams = Team.all
   end
 
+  def show
+    @team = Team.find(params[:id])
+  end
+
 end
