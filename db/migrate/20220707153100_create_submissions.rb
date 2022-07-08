@@ -7,6 +7,7 @@ class CreateSubmissions < ActiveRecord::Migration[5.2]
       t.string :sauce
       t.integer :cook_time
       t.float :score
+      t.boolean :spicy
 
       t.timestamps
     end
