@@ -7,6 +7,12 @@ RSpec.describe 'the submissions show page' do
     visit "/submissions/#{submission.id}"
 
     expect(page).to have_content(submission.title)
+    expect(page).to have_content(submission.meat)
+    expect(page).to have_content(submission.rub)
+    expect(page).to have_content(submission.sauce)
+    expect(page).to have_content(submission.cook_time)
+    expect(page).to have_content(submission.score)
+    expect(page).to have_content(submission.spicy)
   end
 
   it 'displays the name of the team for the submission' do

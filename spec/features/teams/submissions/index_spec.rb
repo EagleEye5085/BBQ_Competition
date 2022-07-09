@@ -11,7 +11,19 @@ RSpec.describe 'Teams submissions index' do
     visit "/teams/#{@kings.id}/submissions"
 
     expect(page).to have_content(@brisket.title)
+    expect(page).to have_content(@brisket.meat)
+    expect(page).to have_content(@brisket.rub)
+    expect(page).to have_content(@brisket.sauce)
+    expect(page).to have_content(@brisket.cook_time)
+    expect(page).to have_content(@brisket.score)
+    expect(page).to have_content(@brisket.spicy)
     expect(page).to have_content(@pulled_pork.title)
+    expect(page).to have_content(@pulled_pork.meat)
+    expect(page).to have_content(@pulled_pork.rub)
+    expect(page).to have_content(@pulled_pork.sauce)
+    expect(page).to have_content(@pulled_pork.cook_time)
+    expect(page).to have_content(@pulled_pork.score)
+    expect(page).to have_content(@pulled_pork.spicy)
   end
 
   it 'links to each submission show page' do
