@@ -1,4 +1,5 @@
 
+<div class="submissions"><%= link_to @submissions, "/submissions" %></div>
 <% @submissions.each do |submission| %>
   <%= link_to submission.title, "/submissions/#{submission.id}" %>
   <p>Meat:<%= submission.meat %></p>
