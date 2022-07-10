@@ -1,5 +1,5 @@
-<div class="teams"><%= link_to "teams", "/teams" %></div>
-<div class="submissions"><%= link_to "submissions", "/submissions" %></div>
+<%= link_to "teams", "/teams" %>
+<%= link_to "submissions", "/submissions" %>
 <h1>Submissions</h1>
 <% @submissions.each do |submission| %>
 <h3>Submission: <%= submission.title %></h3>

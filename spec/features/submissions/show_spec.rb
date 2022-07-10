@@ -31,7 +31,7 @@ RSpec.describe 'the submissions show page' do
 
     visit "/submissions/#{@pulled_pork.id}"
 
-    first('.submissions').click_on "submissions"
+    click_link("submissions")
 
     expect(current_path).to eq("/submissions")
   end
@@ -40,7 +40,7 @@ RSpec.describe 'the submissions show page' do
 
     visit "/submissions/#{@pulled_pork.id}"
 
-    first('.teams').click_on "teams"
+    click_link("teams")
 
     expect(current_path).to eq("/teams")
   end
