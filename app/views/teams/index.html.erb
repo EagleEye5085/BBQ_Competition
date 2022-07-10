@@ -1,7 +1,9 @@
+<div class="teams"><%= link_to "teams", "/teams" %></div>
+<div class="submissions"><%= link_to "submissions", "/submissions" %></div>
 <h1>Teams</h1>
-<% @teams.each do |team| %>
+<% @teams.order(created_at: :desc).each_with_index do |team, index| %>
+  <div id="team-<%= index %>">
   <h3>Team name: <%= team.name %></h3>
-  <p>Number of members: <%= team.members %></p>
-  <p>Team wins: <%= team.wins %></p>
-  <p>Team last year winner: <%= team.last_year_winner %></p>
+  <p>Team created_at: <%= team.created_at %></p>
+  </div>
 <% end %>

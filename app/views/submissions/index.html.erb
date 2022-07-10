@@ -1,3 +1,5 @@
+<div class="teams"><%= link_to "teams", "/teams" %></div>
+<div class="submissions"><%= link_to "submissions", "/submissions" %></div>
 <h1>Submissions</h1>
 <% @submissions.each do |submission| %>
 <h3>Submission: <%= submission.title %></h3>
@@ -6,4 +8,5 @@
 <p>Sauce: <%= submission.sauce %></p>
 <p>Cook Time: <%= submission.cook_time %></p>
 <p>Score: <%= submission.score %></p>
+<p>Spicy: <%= submission.spicy %></p>
 <% end %>
