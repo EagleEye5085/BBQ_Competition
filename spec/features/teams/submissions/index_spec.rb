@@ -39,7 +39,7 @@ RSpec.describe 'Teams submissions index' do
 
     visit "/teams/#{@kings.id}/submissions"
 
-    first('.submissions').click_on @submissions
+    first('.submissions').click_on "submissions"
 
     expect(current_path).to eq("/submissions")
   end
@@ -48,7 +48,7 @@ RSpec.describe 'Teams submissions index' do
 
     visit "/teams/#{@kings.id}/submissions"
 
-    first('.teams').click_on @teams
+    first('.teams').click_on "teams"
 
     expect(current_path).to eq("/teams")
   end

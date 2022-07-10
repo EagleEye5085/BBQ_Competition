@@ -1,5 +1,5 @@
-<div class="teams"><%= link_to @teams, "/teams" %></div>
-<div class="submissions"><%= link_to @submissions, "/submissions" %></div>
+<div class="teams"><%= link_to "teams", "/teams" %></div>
+<div class="submissions"><%= link_to "submissions", "/submissions" %></div>
 <h1>Teams</h1>
 <% @teams.order(created_at: :desc).each_with_index do |team, index| %>
   <div id="team-<%= index %>">
