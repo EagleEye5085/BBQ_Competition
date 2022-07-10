@@ -5,7 +5,6 @@
 <h1>Teams</h1>
 <% @teams.each_with_index do |team, index| %>
   <div id="team-<%= index %>">
-    <%= button_to "Edit #{team.name}", "/teams/#{team.id}/edit", method: :get %>
   <h3>Team name: <%= team.name %></h3>
   <p>Team created_at: <%= team.created_at %></p>
   </div>

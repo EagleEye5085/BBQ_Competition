@@ -1,0 +1,18 @@
+<%= form_with url: "/teams/#{params[:team_id]}/submissions", method: :post, local: true do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+  <%= form.label :meat%>
+  <%= form.text_field :meat %>
+  <%= form.label :rub %>
+  <%= form.text_field :rub %>
+  <%= form.label :sauce %>
+  <%= form.text_field :sauce %>
+  <%= form.label :cook_time %>
+  <%= form.text_field :cook_time %>
+  <%= form.label :score%>
+  <%= form.text_field :score %>
+  <%= form.label :spicy %>
+  <%= form.text_field :spicy %>
+
+  <%= form.submit "Create Submission" %>
+<% end %>

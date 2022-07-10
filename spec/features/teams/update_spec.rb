@@ -4,7 +4,7 @@ RSpec.describe 'the team update' do
   it 'links to the update page' do
     kings = Team.create!(name: "King Klown BBQ", members: 5, wins: 3, last_year_winner: true)
 
-    visit '/teams'
+    visit "/teams/#{kings.id}"
 
     click_button "Edit #{kings.name}"
 
@@ -14,7 +14,7 @@ RSpec.describe 'the team update' do
   it 'can edit the artist' do
     kings = Team.create!(name: "King Klown BBQ", members: 5, wins: 3, last_year_winner: true)
 
-    visit '/teams'
+    visit "/teams/#{kings.id}"
 
     click_button "Edit #{kings.name}"
 

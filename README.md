@@ -22,6 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+------------------------------------------------
 Iteration 1
 CRUD
 ------------------------------------------------
@@ -110,11 +111,11 @@ As a visitor
 When I visit a parent show page ('/parents/:id')
 Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
 Iteration 1 will be reviewed at your second check-in
-
+------------------------------------------------
 Iteration 2
 CRUD
 ------------------------------------------------
-[ ] done
+[x] done
 
 User Story 11, Parent Creation
 
@@ -129,7 +130,7 @@ Then a `POST` request is sent to the '/parents' route,
 a new parent record is created,
 and I am redirected to the Parent Index page where I see the new Parent displayed.
 ------------------------------------------------
-[ ] done
+[x] done
 
 User Story 12, Parent Update
 
@@ -144,7 +145,7 @@ Then a `PATCH` request is sent to '/parents/:id',
 the parent's info is updated,
 and I am redirected to the Parent's Show page where I see the parent's updated info
 ------------------------------------------------
-[ ] done
+[x] done
 
 User Story 13, Parent Child Creation
 
@@ -212,6 +213,7 @@ When I visit the `child_table_name` index page or a parent `child_table_name` in
 Next to every child, I see a link to edit that child's info
 When I click the link
 I should be taken to that `child_table_name` edit page where I can update its information just like in User Story 11
+------------------------------------------------
 Iteration 3
 CRUD
 ------------------------------------------------
