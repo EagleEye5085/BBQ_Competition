@@ -1,5 +1,6 @@
-<div class="teams"><%= link_to "teams", "/teams" %></div>
-<div class="submissions"><%= link_to "submissions", "/submissions" %></div>
+<%= link_to "teams", "/teams" %>
+<%= link_to "submissions", "/submissions" %>
+<%= button_to "Edit #{@submission.title}", "/submissions/#{@submission.id}/edit", method: :get %>
 <h3>Submission: <%= @submission.title %></h3>
 <p>Meat:<%= @submission.meat %></p>
 <p>Rub: <%= @submission.rub %></p>

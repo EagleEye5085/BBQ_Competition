@@ -39,7 +39,7 @@ RSpec.describe 'Teams submissions index' do
 
     visit "/teams/#{@kings.id}/submissions"
 
-    first('.submissions').click_on "submissions"
+    click_link("submissions")
 
     expect(current_path).to eq("/submissions")
   end
@@ -48,9 +48,23 @@ RSpec.describe 'Teams submissions index' do
 
     visit "/teams/#{@kings.id}/submissions"
 
-    first('.teams').click_on "teams"
+    click_link("teams")
 
     expect(current_path).to eq("/teams")
   end
+
+
+    it 'lists by Alphabetical Order by name' do
+
+      visit "/teams/#{@kings.id}/submissions"
+
+      within '#submission-0' do
+        expect(page).to have_content("Kings Brisket Burnt Ends")
+      end
+
+      within '#submission-1' do
+        expect(page).to have_content("Kings Pulled Pork")
+      end
+    end
 
 end

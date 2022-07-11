@@ -1,6 +1,10 @@
-<div class="teams"><%= link_to "teams", "/teams" %></div>
-<div class="submissions"><%= link_to "submissions", "/submissions" %></div>
-<% @submissions.each do |submission| %>
+<%= link_to "teams", "/teams" %>
+<%= link_to "submissions", "/submissions" %>
+<p><%= @team.name %> submissions</p>
+<%= link_to "new submission", "/teams/#{@team.id}/submissions/new" %>
+
+<% @submissions.each_with_index do |submission, index| %>
+<div id="submission-<%= index %>">
   <%= link_to submission.title, "/submissions/#{submission.id}" %>
   <p>Meat:<%= submission.meat %></p>
   <p>Rub: <%= submission.rub %></p>

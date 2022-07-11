@@ -1,7 +1,10 @@
-<div class="teams"><%= link_to "teams", "/teams" %></div>
-<div class="submissions"><%= link_to "submissions", "/submissions" %></div>
+<%= link_to "teams", "/teams" %>
+<%= link_to "submissions", "/submissions" %>
+<%= link_to "new team", "/teams/new" %>
+
 <h1>Teams</h1>
-<% @teams.order(created_at: :desc).each_with_index do |team, index| %>
+<% @teams.each_with_index do |team, index| %>
+<%= button_to "Edit #{team.name}", "/teams/#{team.id}/edit", method: :get %>
   <div id="team-<%= index %>">
   <h3>Team name: <%= team.name %></h3>
   <p>Team created_at: <%= team.created_at %></p>

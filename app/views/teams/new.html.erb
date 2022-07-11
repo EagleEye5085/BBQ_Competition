@@ -1,0 +1,12 @@
+<%= form_with url: '/teams', method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :members%>
+  <%= form.text_field :members %>
+  <%= form.label :wins %>
+  <%= form.text_field :wins %>
+  <%= form.label :last_year_winner %>
+  <%= form.text_field :last_year_winner %>
+
+  <%= form.submit "Create Team" %>
+<% end %>

@@ -14,7 +14,7 @@ RSpec.describe 'Teams index' do
     expect(page).to have_content(@kings.name)
   end
 
-  it 'lists by orderof creation new to old' do
+  it 'lists by order of creation new to old' do
     Team.create!(name: "King Klown BBQ", members: 5, wins: 3, last_year_winner: true)
     Team.create!(name: "Dusty Dingo BBQ", members: 6, wins: 1, last_year_winner: false)
     Team.create!(name: "The Billy Bro's", members: 4, wins: 2, last_year_winner: false)
@@ -39,7 +39,7 @@ RSpec.describe 'Teams index' do
 
     visit "/teams"
 
-    first('.submissions').click_on "submissions"
+    click_link("submissions")
 
     expect(current_path).to eq("/submissions")
   end
@@ -48,9 +48,25 @@ RSpec.describe 'Teams index' do
 
     visit "/teams"
 
-    first('.teams').click_on "teams"
+    click_link("teams")
 
     expect(current_path).to eq("/teams")
+  end
+
+  it 'can edit the team' do
+
+    visit "/teams/"
+
+    click_button "Edit #{@kings.name}"
+
+    fill_in 'Name', with: 'King Clown BBQ'
+    fill_in 'Members', with: 3
+    fill_in 'Wins', with: 1
+    fill_in 'Last year winner', with: false
+    click_button 'Update Team'
+
+    expect(current_path).to eq("/teams/#{@kings.id}")
+    expect(page).to have_content('King Clown BBQ')
   end
 
 end
