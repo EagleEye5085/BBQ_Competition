@@ -5,6 +5,7 @@ class TeamSubmissionsController < ApplicationController
   end
 
   def new
+    @team = Team.find(params[:team_id])
   end
 
   def create

@@ -1,4 +1,4 @@
-<%= form_with url: "/teams/#{params[:team_id]}/submissions", method: :post, local: true do |form| %>
+<%= form_with url: "/teams/#{@team.id}/submissions", method: :post, local: true do |form| %>
   <%= form.label :title %>
   <%= form.text_field :title %>
   <%= form.label :meat%>

@@ -2,6 +2,7 @@
 <%= link_to "submissions", "/submissions" %>
 <p><%= @team.name %> submissions</p>
 <%= link_to "new submission", "/teams/#{@team.id}/submissions/new" %>
+
 <% @submissions.each do |submission| %>
   <%= link_to submission.title, "/submissions/#{submission.id}" %>
   <p>Meat:<%= submission.meat %></p>
