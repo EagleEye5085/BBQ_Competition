@@ -53,4 +53,20 @@ RSpec.describe 'Teams index' do
     expect(current_path).to eq("/teams")
   end
 
+  it 'can edit the team' do
+
+    visit "/teams/"
+
+    click_button "Edit #{@kings.name}"
+
+    fill_in 'Name', with: 'King Clown BBQ'
+    fill_in 'Members', with: 3
+    fill_in 'Wins', with: 1
+    fill_in 'Last year winner', with: false
+    click_button 'Update Team'
+
+    expect(current_path).to eq("/teams/#{@kings.id}")
+    expect(page).to have_content('King Clown BBQ')
+  end
+
 end

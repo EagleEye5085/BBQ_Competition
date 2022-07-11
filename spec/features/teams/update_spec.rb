@@ -11,7 +11,7 @@ RSpec.describe 'the team update' do
     expect(current_path).to eq("/teams/#{kings.id}/edit")
   end
 
-  it 'can edit the artist' do
+  it 'can edit the team' do
     kings = Team.create!(name: "King Klown BBQ", members: 5, wins: 3, last_year_winner: true)
 
     visit "/teams/#{kings.id}"
