@@ -2,6 +2,7 @@
 <%= link_to "submissions", "/submissions" %>
 <h1>Submissions</h1>
 <% @submissions.each do |submission| %>
+<%= button_to "Edit #{submission.title}", "/submissions/#{submission.id}/edit", method: :get %>
 <h3>Submission: <%= submission.title %></h3>
 <p>Meat:<%= submission.meat %></p>
 <p>Rub: <%= submission.rub %></p>

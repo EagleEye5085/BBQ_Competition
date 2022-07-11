@@ -12,7 +12,7 @@ RSpec.describe 'the submission update' do
     expect(current_path).to eq("/submissions/#{brisket.id}/edit")
   end
 
-  it 'can edit the artist' do
+  it 'can edit the submission' do
     kings = Team.create!(name: "King Klown BBQ", members: 5, wins: 3, last_year_winner: true)
     brisket = kings.submissions.create!(title: "Kings Brisket Burnt Ends", meat: "Beef", rub: "Salt and Pepper", sauce: "Kings Spicy BBQ Sauce", cook_time: 2, score: 7.0, spicy: true)
 
