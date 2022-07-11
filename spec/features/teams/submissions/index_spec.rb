@@ -53,4 +53,18 @@ RSpec.describe 'Teams submissions index' do
     expect(current_path).to eq("/teams")
   end
 
+
+    it 'lists by Alphabetical Order by name' do
+
+      visit "/teams/#{@kings.id}/submissions"
+
+      within '#submission-0' do
+        expect(page).to have_content("Kings Brisket Burnt Ends")
+      end
+
+      within '#submission-1' do
+        expect(page).to have_content("Kings Pulled Pork")
+      end
+    end
+
 end

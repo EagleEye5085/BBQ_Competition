@@ -1,7 +1,7 @@
 class TeamSubmissionsController < ApplicationController
   def index
     @team = Team.find(params[:team_id])
-    @submissions = @team.submissions
+    @submissions = @team.submissions.order(title: :asc)
   end
 
   def new

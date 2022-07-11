@@ -14,7 +14,7 @@ RSpec.describe 'Teams index' do
     expect(page).to have_content(@kings.name)
   end
 
-  it 'lists by orderof creation new to old' do
+  it 'lists by order of creation new to old' do
     Team.create!(name: "King Klown BBQ", members: 5, wins: 3, last_year_winner: true)
     Team.create!(name: "Dusty Dingo BBQ", members: 6, wins: 1, last_year_winner: false)
     Team.create!(name: "The Billy Bro's", members: 4, wins: 2, last_year_winner: false)
