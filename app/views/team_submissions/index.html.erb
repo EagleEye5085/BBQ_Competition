@@ -2,6 +2,7 @@
 <%= link_to "submissions", "/submissions" %>
 <p><%= @team.name %> submissions</p>
 <%= link_to "new submission", "/teams/#{@team.id}/submissions/new" %>
+<%= link_to "Sort submissions by title", "/teams/#{@team.id}/submissions?sort=asc" %>
 
 <% @submissions.each_with_index do |submission, index| %>
 <div id="submission-<%= index %>">

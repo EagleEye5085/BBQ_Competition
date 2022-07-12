@@ -45,7 +45,7 @@ RSpec.describe 'submissions index' do
     visit "/submissions"
 
     expect(page).to have_content("Kings Brisket Burnt Ends")
-    expect(page).to have_no_content("Kings Pulled Pork")
+    expect(page).to_not have_content("Kings Pulled Pork")
   end
 
   it 'can edit the submission' do

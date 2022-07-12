@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   post '/teams/:team_id/submissions', to: 'team_submissions#create'
   get '/submissions/:id/edit', to: 'submissions#edit'
   patch '/submissions/:id', to:  'submissions#update'
+  delete '/teams/:id', to: 'teams#delete'
 end

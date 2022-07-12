@@ -1,8 +1,10 @@
 <%= link_to "team submissions", "/teams/#{@team.id}/submissions" %>
 <%= link_to "teams", "/teams" %>
 <%= link_to "submissions", "/submissions" %>
-  <%= button_to "Edit #{@team.name}", "/teams/#{@team.id}/edit", method: :get %>
-<h1><%= @team.name %></h1>
+<%= button_to "Edit #{@team.name}", "/teams/#{@team.id}/edit", method: :get %>
+<%= link_to "Delete #{@team.name}", "/teams/#{@team.id}", method: :delete %>
+
+<h1><%=  @team.name  %></h1>
 <p>Number of members: <%= @team.members %></p>
 <p>Team wins: <%= @team.wins %></p>
 <p>Team last year winner: <%= @team.last_year_winner %></p>

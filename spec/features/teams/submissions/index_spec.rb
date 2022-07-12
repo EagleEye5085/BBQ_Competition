@@ -3,20 +3,12 @@ require 'rails_helper'
 RSpec.describe 'Teams submissions index' do
   before :each do
     @kings = Team.create!(name: "King Klown BBQ", members: 5, wins: 3, last_year_winner: true)
-    @brisket = @kings.submissions.create!(title: "Kings Brisket Burnt Ends", meat: "Beef", rub: "Salt and Pepper", sauce: "Kings Spicy BBQ Sauce", cook_time: 2, score: 7.0, spicy: true)
     @pulled_pork = @kings.submissions.create!(title: "Kings Pulled Pork", meat: "Pork", rub: "Kings Pork Bark", sauce: "Kings Sweet BBQ Sauce", cook_time: 6, score: 6.0, spicy: true)
+    @brisket = @kings.submissions.create!(title: "Kings Brisket Burnt Ends", meat: "Beef", rub: "Salt and Pepper", sauce: "Kings Spicy BBQ Sauce", cook_time: 2, score: 7.0, spicy: true)
   end
 
   it 'shows all of the titles of the submissions for the team' do
     visit "/teams/#{@kings.id}/submissions"
-
-    expect(page).to have_content(@brisket.title)
-    expect(page).to have_content(@brisket.meat)
-    expect(page).to have_content(@brisket.rub)
-    expect(page).to have_content(@brisket.sauce)
-    expect(page).to have_content(@brisket.cook_time)
-    expect(page).to have_content(@brisket.score)
-    expect(page).to have_content(@brisket.spicy)
 
     expect(page).to have_content(@pulled_pork.title)
     expect(page).to have_content(@pulled_pork.meat)
@@ -25,6 +17,14 @@ RSpec.describe 'Teams submissions index' do
     expect(page).to have_content(@pulled_pork.cook_time)
     expect(page).to have_content(@pulled_pork.score)
     expect(page).to have_content(@pulled_pork.spicy)
+
+    expect(page).to have_content(@brisket.title)
+    expect(page).to have_content(@brisket.meat)
+    expect(page).to have_content(@brisket.rub)
+    expect(page).to have_content(@brisket.sauce)
+    expect(page).to have_content(@brisket.cook_time)
+    expect(page).to have_content(@brisket.score)
+    expect(page).to have_content(@brisket.spicy)
   end
 
   it 'links to each submission show page' do
@@ -57,6 +57,10 @@ RSpec.describe 'Teams submissions index' do
     it 'lists by Alphabetical Order by name' do
 
       visit "/teams/#{@kings.id}/submissions"
+
+      click_link("Sort submissions by title")
+
+      expect(current_path).to eq("/teams/#{@kings.id}/submissions")
 
       within '#submission-0' do
         expect(page).to have_content("Kings Brisket Burnt Ends")
