@@ -1,18 +1,20 @@
 require 'rails_helper'
 
 RSpec.describe 'team submission creation' do
+  before :each do
+    @team = Team.create!(name: "King Klown BBQ", members: 5, wins: 3, last_year_winner: true)
+  end
 
   it 'links to the new page from the team submissions index' do
-    team = Team.create!(name: "King Klown BBQ", members: 5, wins: 3, last_year_winner: true)
 
-    visit "/teams/#{team.id}/submissions"
+    visit "/teams/#{@team.id}/submissions"
 
     click_link('new submission')
-    expect(current_path).to eq("/teams/#{team.id}/submissions/new")
+    expect(current_path).to eq("/teams/#{@team.id}/submissions/new")
   end
   it 'can create a new submission' do
-    team = Team.create!(name: "King Klown BBQ", members: 5, wins: 3, last_year_winner: true)
-    visit "/teams/#{team.id}/submissions/new"
+
+    visit "/teams/#{@team.id}/submissions/new"
 
     fill_in('Title', with: 'Kings Brisket Burnt Ends')
     fill_in('Meat', with: "Beef")
@@ -24,7 +26,7 @@ RSpec.describe 'team submission creation' do
 
     click_button('Create Submission')
 
-    expect(current_path).to eq("/teams/#{team.id}/submissions")
+    expect(current_path).to eq("/teams/#{@team.id}/submissions")
     expect(page).to have_content('Kings Brisket Burnt Ends')
   end
 
