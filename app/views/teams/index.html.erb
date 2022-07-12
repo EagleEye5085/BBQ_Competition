@@ -7,7 +7,7 @@
 <%= button_to "Edit #{team.name}", "/teams/#{team.id}/edit", method: :get %>
 <%= link_to "Delete #{team.name}", "/teams/#{team.id}", method: :delete %>
   <div id="team-<%= index %>">
-  <h3>Team name: <%= team.name %></h3>
+  <h3>Team name: <%= link_to "#{team.name}", "/teams/#{team.id}" %></h3>
   <p>Team created_at: <%= team.created_at %></p>
   </div>
 <% end %>

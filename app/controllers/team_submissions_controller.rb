@@ -4,6 +4,7 @@ class TeamSubmissionsController < ApplicationController
     if params[:sort] == "asc"
       @submissions = @team.submissions.order(:title)
     elsif params[:score_filter]
+      # binding.pry
       @submissions = @team.submissions.where("(score) > :score_filter", score_filter: params[:score_filter])
     else
       @submissions = @team.submissions

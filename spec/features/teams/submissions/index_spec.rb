@@ -76,4 +76,12 @@ RSpec.describe 'Teams submissions index' do
     expect(page).to_not have_content("Kings Pulled Pork")
   end
 
+  it 'can delete a team from the index page' do
+
+    click_link "Delete #{@brisket.title}"
+
+    expect(current_path).to eq('/submissions')
+    expect(page).to_not have_content("Kings Brisket Burnt Ends")
+  end
+
 end
