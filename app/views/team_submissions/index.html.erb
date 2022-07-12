@@ -3,6 +3,12 @@
 <p><%= @team.name %> submissions</p>
 <%= link_to "new submission", "/teams/#{@team.id}/submissions/new" %>
 <%= link_to "Sort submissions by title", "/teams/#{@team.id}/submissions?sort=asc" %>
+<h4>Filter by score</h4>
+<%= form_with url: "/teams/#{@team.id}/submissions", method: :get do |form| %>
+  <%= form.label :score_filter %>
+  <%= form.text_field :score_filter %>
+  <%= form.submit "Filter" %>
+<% end %>
 
 <% @submissions.each_with_index do |submission, index| %>
 <div id="submission-<%= index %>">

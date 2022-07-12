@@ -3,6 +3,8 @@ class TeamSubmissionsController < ApplicationController
     @team = Team.find(params[:team_id])
     if params[:sort] == "asc"
       @submissions = @team.submissions.order(:title)
+    elsif params[:score_filter]
+      @submissions = @team.submissions.where("(score) > :score_filter", score_filter: params[:score_filter])
     else
       @submissions = @team.submissions
     end

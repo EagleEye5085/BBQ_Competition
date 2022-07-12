@@ -50,25 +50,30 @@ RSpec.describe 'Teams submissions index' do
     expect(current_path).to eq("/teams")
   end
 
+  it 'lists by Alphabetical Order by name' do
 
-    it 'lists by Alphabetical Order by name' do
+    click_link("Sort submissions by title")
 
-      click_link("Sort submissions by title")
+    expect(current_path).to eq("/teams/#{@kings.id}/submissions")
 
-      expect(current_path).to eq("/teams/#{@kings.id}/submissions")
-
-      within '#submission-0' do
-        expect(page).to have_content("Kings Brisket Burnt Ends")
-      end
-
-      within '#submission-1' do
-        expect(page).to have_content("Kings Pulled Pork")
-      end
+    within '#submission-0' do
+      expect(page).to have_content("Kings Brisket Burnt Ends")
     end
 
-    it 'displays records over a given threshold'
+    within '#submission-1' do
+      expect(page).to have_content("Kings Pulled Pork")
+    end
+  end
 
+  it 'displays records over a given threshold' do
 
+    fill_in('Score filter', with: 6.5)
 
+    click_button "Filter"
+
+    expect(current_path).to eq("/teams/#{@kings.id}/submissions")
+    expect(page).to have_content("Kings Brisket Burnt Ends")
+    expect(page).to_not have_content("Kings Pulled Pork")
+  end
 
 end
