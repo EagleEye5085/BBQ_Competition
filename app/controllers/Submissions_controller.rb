@@ -21,6 +21,13 @@ class SubmissionsController < ApplicationController
     redirect_to "/submissions/#{submission.id}"
   end
 
+  def delete
+      submission = Submission.find(params[:id])
+      submission.destroy
+
+    redirect_to "/submissions"
+  end
+
   private
     def submission_params
       params.permit(:title, :meat, :rub, :sauce, :cook_time, :score, :spicy)
