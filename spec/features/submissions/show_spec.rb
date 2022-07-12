@@ -45,4 +45,14 @@ RSpec.describe 'the submissions show page' do
     expect(current_path).to eq("/teams")
   end
 
+  it 'can delete a team from the show page' do
+
+    visit "/submissions/#{@brisket.id}"
+
+    click_link "Delete #{@brisket.title}"
+
+    expect(current_path).to eq('/submissions')
+    expect(page).to_not have_content("Kings Brisket Burnt Ends")
+  end
+
 end

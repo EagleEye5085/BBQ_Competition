@@ -1,6 +1,7 @@
 <%= link_to "teams", "/teams" %>
 <%= link_to "submissions", "/submissions" %>
 <%= button_to "Edit #{@submission.title}", "/submissions/#{@submission.id}/edit", method: :get %>
+<%= link_to "Delete #{@submission.title}", "/submissions/#{@submission.id}", method: :delete %>
 <h3>Submission: <%= @submission.title %></h3>
 <p>Meat:<%= @submission.meat %></p>
 <p>Rub: <%= @submission.rub %></p>
